@@ -53,17 +53,18 @@ while True:
         message = list(input("\nEnter your message: \n").lower())
         shift_num = int(input("\nEnter an encryption number: \n"))
         print("\nHere is your encrypted message:\n")
-        print(encrypt(message, shift_num))
+        print(encrypt(message, (shift_num % len(alphabet))))
     elif choice == "decode":
         message = list(input("\nEnter message to decrypt: \n").lower())
         shift_num = int(input("\nEnter a decryption number: \n"))
         print("\nHere is your decrypted message:\n")
-        print(encrypt(message, -shift_num))
+        print(encrypt(message, -(shift_num % len(alphabet))))
     else:
         print("Sorry, command not recognised, please try again.")
         
     exit = input("\nType 'yes' if you want to go again. Otherwise type 'no'.\n")
     if exit == "no":
+        print("Goodbye")
         break
     else:
         clear()
