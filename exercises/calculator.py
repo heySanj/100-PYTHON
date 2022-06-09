@@ -19,37 +19,65 @@ logo = """
 |_____________________|
 """
 
-def calculate(num1, num2, operation):
-    if operation == "+":
-        return num1 + num2
-    elif operation == "-":
-        return num1 - num2
-    elif operation == "*":
-        return num1 * num2
-    elif operation == "/":
-        return num1 / num2
-    else:
-        return "ERROR"
+def add(num1, num2):
+    return num1 + num2
 
-print(logo)
-num1 = float(input("\nWhat's the first number? "))
-print("\n+\n-\n*\n/")
+def subtract(num1, num2):
+    return num1 - num2
 
-while True:   
-        
-    operation = input("\nPick an operation: ")
-    num2 = float(input("\nWhats the next number? "))
-    answer = calculate(num1, num2, operation)
-    if answer == "ERROR":
-        print("\nSorry! That could not be calculated.")
-    else:
-        print(f"{num1} {operation} {num2} = {answer}\n")
-        
-    repeat = input(f"Type 'y' to continue calculating with {answer}, type 'n' to start a new calculation, or 'x' to exit: ")
+def divide(num1, num2):
+    return num1 / num2
 
-    if repeat == 'x':
-        break
-    elif repeat == 'y':
-        num1 = answer
-    else:
-        num1 = float(input("What's the first number? "))
+def multiply(num1, num2):
+    return num1 * num2
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "/": divide,
+    "*": multiply
+}
+
+def calculate(num1=int, num2=int, operation=str):
+    """Take two numbers, and perform the operation on them, like a calculator"""
+    # if operation == "+":
+    #     return num1 + num2
+    # elif operation == "-":
+    #     return num1 - num2
+    # elif operation == "*":
+    #     return num1 * num2
+    # elif operation == "/":
+    #     return num1 / num2
+    # else:
+    #     return "ERROR"
+    return operations[operation](num1, num2)
+
+
+
+def calc_app():
+    clear()
+    print(logo)
+    num1 = float(input("\nWhat's the first number? "))
+    print("\n+\n-\n*\n/")
+
+    while True:        
+        operation = input("\nPick an operation: ")
+        num2 = float(input("\nWhats the next number? "))
+        answer = calculate(num1, num2, operation)
+        if answer == "ERROR":
+            print("\nSorry! That could not be calculated.")
+        else:
+            print(f"{num1} {operation} {num2} = {answer}\n")
+            
+        repeat = input(f"Type 'y' to continue calculating with {answer}, type 'n' to start a new calculation, or 'x' to exit: ")
+
+        if repeat == 'x':
+            print("\nGoodbye!\n\n")
+            exit()
+        elif repeat == 'y':
+            num1 = answer
+        else:
+            calc_app()
+
+
+calc_app()
