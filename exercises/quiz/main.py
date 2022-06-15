@@ -6,33 +6,26 @@ def clear():
     # for mac and linux(here, os.name is 'posix')
     else:
         _ = system('clear')
-
 clear()
 
-class User:
-    def __init__(self, name, location):
-        # Initialise attributes
-        self.name = name
-        self.location = location
-        self.followers = 0
-        self.following = 0
+import random
+
+from quiz_brain import QuizBrain
+from question_model import Question
+from data import open_tdb_quiz
+
+# import the questions and put them into a list
+questions = []
+
+for question in open_tdb_quiz:
+    questions.append(Question(question['question'], question['correct_answer'].title()))
+
+random.shuffle(questions)    
+quiz = QuizBrain(questions)
+
+# Run the quiz while there are still questions remaining
+while quiz.questions_remaining():
+    quiz.next_question()
     
-    def say_hi(self):
-        print(f"Hi there! I'm {self.name} from {self.location}.")
-        
-    def follow(self, user):
-        user.followers += 1
-        self.following += 1        
-
-user_1 = User("Sanj", "Brisbane")
-user_2 = User("Sareeka", "Brisbane")
-
-user_1.say_hi()
-user_2.say_hi()
-
-user_1.follow(user_2)
-user_2.follow(user_1)
-
-print(user_2.followers)
-
-
+print("You've completed the quiz!")
+print(f"You're final score was: {quiz.score}/{quiz.question_number}\n\n")
