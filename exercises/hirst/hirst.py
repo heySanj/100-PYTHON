@@ -11,7 +11,7 @@ def clear():
 
 clear()
 
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, hideturtle
 import colorgram
 import random
 
@@ -79,6 +79,7 @@ screen.setup(screen_w, screen_h)
 # Generate dots
 def dot_grid(columns, rows, size):
     timmy.up()
+    timmy.hideturtle()
     for r in range(rows):
         spacing = (r+1) * (screen_h / (rows+1))
         timmy.goto(-screen_w / 2, (-screen_h / 2) + spacing)
