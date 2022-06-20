@@ -51,6 +51,7 @@ def all_shapes(sides, size):
 
 def random_walk(size, steps):
     '''Randomly move in a direction for x amount of steps'''
+    timmy.pensize(15)
     direction = [0, 90, 180, 270]
     for _ in range(steps):
         # Choose random direction
@@ -59,12 +60,19 @@ def random_walk(size, steps):
         random_color()
         timmy.forward(size)
 
+def spirograph(size, steps):
+    for _ in range(steps):
+        random_color()
+        timmy.left(360/steps)
+        timmy.circle(size)
+
 # Change shape and settings
-timmy.pensize(15)
-timmy.speed(8)
+timmy.pensize(2)
+timmy.speed(28)
         
 # Do something
-random_walk(30, 150)
+# random_walk(30, 150)
+spirograph(100, 40)
 
 # Exit on click at the end of the code
 screen.exitonclick()
