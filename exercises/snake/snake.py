@@ -1,4 +1,6 @@
-from turtle import Screen, Turtle
+from turtle import Turtle
+import random
+
 STARTING_POSITIONS = [(0,0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -13,18 +15,19 @@ class Snake:
         self.snake_body = []        
         self.create_snake()
         self.head = self.snake_body[0]
+        
 
 
     # Functions
     def create_snake(self):
         '''Create the initial snake'''         
         for position in STARTING_POSITIONS:
-            self.add_part(position)
+            self.add_part(position, self.random_colour())
     
-    def add_part(self, pos):
+    def add_part(self, pos, colour):
         '''Add a part to the snake'''
         new_turtle = Turtle('square')
-        new_turtle.color('white')
+        new_turtle.color(colour)
         new_turtle.penup()
         
         # Move the body part to position
@@ -57,3 +60,7 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.seth(RIGHT)
+            
+    def random_colour(self):
+        # Colour
+        return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
