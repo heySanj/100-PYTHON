@@ -1,6 +1,6 @@
 COLORS = ["red", "orange", "goldenrod", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
-MOVE_INCREMENT = 10
+MOVE_INCREMENT = 5
 
 # Spawn axis
 SPAWN_AREA = (-200, 250)
@@ -19,8 +19,10 @@ class CarManager:
         return random.randrange(SPAWN_AREA[0],SPAWN_AREA[1],LANE_SIZE)
     
     def create_car(self):
-        new_car = Car(random.choice(COLORS), self.random_start())
-        self.car_list.append(new_car)
+        random_chance = random.randint(1, 6)
+        if random_chance == 1:
+            new_car = Car(random.choice(COLORS), self.random_start())
+            self.car_list.append(new_car)
         
     def inc_speed(self):
         self.speed += MOVE_INCREMENT

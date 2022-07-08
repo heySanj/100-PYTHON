@@ -39,14 +39,14 @@ def controls():
 
 # Game
 game_is_on = True
-car_freq = 6
 
 while game_is_on:
         
     # Refresh the screen every loop
     time.sleep(0.1)
     screen.update()
-    controls()    
+    controls()
+    manager.create_car()    
     manager.move_cars()
     
     # Check Win
@@ -62,12 +62,7 @@ while game_is_on:
             game_is_on = False
             score.game_over()
         
-    # Create car every 6 loops
-    if car_freq <= 0:
-        manager.create_car()
-        car_freq = 6
-    else:
-        car_freq -= 1
+
 
     
 # Exit on click at the end of the code

@@ -20,7 +20,6 @@ class Car(Turtle):
         
     def check_crash(self, player):
         if self.distance(player) <= 20:
-            print("crash")
             return True
         else:
             return False
