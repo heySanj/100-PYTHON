@@ -38,6 +38,9 @@ def controls():
     screen.onkey(key="a", fun=snake.left)
     screen.onkey(key="d", fun=snake.right)
               
+def reset_game():
+    scoreboard.reset()
+    snake.reset()
 
 # Game
 game_is_on = True
@@ -62,14 +65,16 @@ while game_is_on:
     
     # Detect collision with walls
     if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
-        game_is_on = False
-        scoreboard.game_over()
+        # game_is_on = False
+        # scoreboard.game_over()
+        reset_game()
 
     # Detect collision with tail
     for part in snake.snake_body[1:]:
         if snake.head.distance(part) < 10:
-            game_is_on = False
-            scoreboard.game_over() 
+            # game_is_on = False
+            # scoreboard.game_over()
+            reset_game()
                 
 # Exit on click at the end of the code
 screen.exitonclick()
