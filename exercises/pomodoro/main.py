@@ -9,12 +9,8 @@ def clear():
         _ = system("clear")
 clear()
 
-from ctypes import alignment
 from tkinter import *
 import math
-from urllib import response
-
-from numpy import short
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
