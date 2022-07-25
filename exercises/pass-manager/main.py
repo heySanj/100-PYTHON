@@ -11,10 +11,9 @@ clear()
 
 from tkinter import *
 from tkinter import messagebox
-import pandas as pd
-import os
 from random import choice, randint, shuffle
 import pyperclip
+import json
 
 BG_COLOUR = "#f8f8ec"
 RED = "#cf4742"
@@ -59,33 +58,34 @@ def save_pw():
     user = input_user.get()
     password = input_pass.get()
     
+    # Save in dictionary for JSON format
+    new_data = {
+        website: {
+            'user': user,
+            'password': password
+        }
+    }
+    
     if len(website) is 0 or len(user) is 0 or len(password) is 0:
         messagebox.showerror("Error", "Some fields have no data!")
-    else:    
-        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nUser: {user} "
-                                                            f"\nPassword: {password} \nIs it okay to save?")
-        
-        if is_ok:
-            # Get the strings from input fields and save to data frame
-            add_data = pd.DataFrame({
-                'WEBSITE': [website],
-                'USER': [user],
-                'PASS': [password]
-            })
+    else:
+        try:
+            with open("data.json", "r") as data_file:
+                data = json.load(data_file) # Read the old data
             
-            # if file does not exist write header 
-            if not os.path.isfile('pw.csv'):
-                add_data.to_csv('pw.csv', index=False, header=['WEBSITE', 'USER', 'PASS'])
-            else: # else it exists so append without writing the header
-                add_data.to_csv('pw.csv', mode='a', index=False, header=False)
+        except FileNotFoundError:        
+            with open("data.json", "w") as data_file:
+                json.dump(new_data, data_file, indent=4) # Write new data to data_file
                 
+        else:            
+            data.update(new_data) # update old data with new data                        
+            with open("data.json", "w") as data_file:
+                json.dump(data, data_file, indent=4) # Write updated data to data_file
+                
+        finally:
             # Clear fields
-            clear_entry()
-            
-        else:
-            pass
-
-        
+            clear_entry() 
+      
 
 
 # ---------------------------- UI SETUP ------------------------------- #
