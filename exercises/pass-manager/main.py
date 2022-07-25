@@ -19,7 +19,7 @@ BG_COLOUR = "#f8f8ec"
 RED = "#cf4742"
 FONT = ("Arial", 11, "bold")
 
-DEFAULT_USER = "hello@sanjeevprasad.com"
+DEFAULT_USER = "user@testmail.com"
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -54,7 +54,7 @@ def clear_entry():
 
 def save_pw():
     
-    website = input_website.get()
+    website = input_website.get().title()
     user = input_user.get()
     password = input_pass.get()
     
@@ -86,8 +86,41 @@ def save_pw():
             # Clear fields
             clear_entry() 
       
+# ---------------------------- SEARCH WEBSITE ------------------------------- #
 
-
+def find_password():
+    website = input_website.get().title()
+    
+    try:
+        with open("data.json", "r") as data_file:
+                data = json.load(data_file) # Read the old data
+            
+    except FileNotFoundError:        
+        messagebox.showerror("Error", "Sorry, no data file could be found.")
+            
+    else:
+        # Use if/else statements for error handling if possible. 
+        # Use Try/except in exceptional cases where needed
+        if website in data:
+            user = data[website]['user']
+            password = data[website]['password']
+            messagebox.showinfo(f"{website} details", f"User: {user}\nPass: {password}")
+        else:
+            messagebox.showerror("Error", f"Sorry, no details for {website} exist.")
+                    
+        # try:
+        #     user = data[website]['user']
+        #     password = data[website]['password']
+        #     messagebox.showinfo(f"{website} details", f"User: {user}\nPass: {password}")
+        # except KeyError as errormessage:
+        #     messagebox.showerror("Error", f"Sorry, no details for {errormessage} exist.")
+            
+    finally:
+        # Clear fields
+        clear_entry() 
+    
+    
+    
 # ---------------------------- UI SETUP ------------------------------- #
 
 # Create a window
@@ -116,7 +149,7 @@ label_user.grid(column=0,row=2, sticky='E')
 label_pass.grid(column=0,row=3, sticky='E')
 
 # Input Fields
-input_website = Entry(width=44,font=FONT, justify='left')
+input_website = Entry(width=24,font=FONT, justify='left')
 input_user = Entry(width=44,font=FONT, justify='left')
 input_pass = Entry(width=24,font=FONT, justify='left')
 
@@ -127,9 +160,11 @@ input_user.insert(0, DEFAULT_USER) # Insert existing text
 input_pass.grid(column=1,row=3, sticky='W')
 
 # Buttons
+btn_search = Button(text="Search", width=16, font=FONT, command=find_password)
 btn_generate = Button(text="Generate Password", width=16, font=FONT, command=generate_pw)
 btn_add = Button(text="Add", width=39, font=FONT, command=save_pw)
 
+btn_search.grid(column=2,row=1, sticky='W')
 btn_generate.grid(column=2,row=3, sticky='W')
 btn_add.grid(column=1,row=4,columnspan=2, sticky='W')
 
