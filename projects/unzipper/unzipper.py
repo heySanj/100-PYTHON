@@ -9,8 +9,7 @@ def clear():
         _ = system("clear")
 clear()
 
-
-from msilib.schema import Error
+import sys
 import os, zipfile
 from tkinter import *
 from tkinter import filedialog, messagebox
@@ -26,6 +25,21 @@ RED = "#b92500"
 global ZIPS
 ZIPS = []
 TARGET_EXT = ".zip"
+
+# ---------------------------- ACCESSING IMAGES FROM THE EXE ------------------------------- #
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
+ICON = resource_path("./imgs/uz_icon.ico")
+LOGO = resource_path("./imgs/logo-400x100.png")
 
 # ---------------------------- FUNCTIONS ------------------------------- #
 
@@ -134,12 +148,21 @@ window = Tk()
 window.title("Unzipper")
 window["bg"] = BG_COLOUR
 window.config(padx=20,pady=20)
+window.iconbitmap(ICON)
 
 # GRID ------------------------ 2 columns, 4 rows
 
 # Logo
-logo = Label(text="UnZipper", font=("Arial Black", 36, "bold"), bg=BG_COLOUR, fg=THEME_COLOUR)
-logo.grid(column=0,row=0,columnspan=2,pady=5)
+# logo = Label(text="UnZipper", font=("Arial Black", 36, "bold"), bg=BG_COLOUR, fg=THEME_COLOUR)
+# logo.grid(column=0,row=0,columnspan=2,pady=5)
+
+# Canvas
+canvas = Canvas(width=400, height=100, bg=BG_COLOUR, highlightthickness=0)
+canvas.grid(column=0,row=0,columnspan=2)
+
+# Logo
+logo_img = PhotoImage(file=LOGO)
+canvas.create_image(200, 50, image=logo_img)
 
 # Text Fields
 file_text = Text(font=("Arial", 9, "italic"), bg=BG_COLOUR, fg=TEXT_COLOUR, width=80,height=3, state='disabled')
