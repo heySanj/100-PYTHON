@@ -78,4 +78,3 @@ for hour in hourly_data[:12]:
         send_sms()
         # print("Rain!")
         break
-    
