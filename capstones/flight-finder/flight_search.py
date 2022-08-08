@@ -38,7 +38,9 @@ class FlightSearch:
             "price_to": max_price,
             "curr": self.currency,
             "nights_in_dst_from": self.min_nights,
-            "nights_in_dst_to": self.max_nights
+            "nights_in_dst_to": self.max_nights,
+            "sort": "price",
+            "max_stopovers": 3
         }
         
         response = requests.get(url=search_ep, headers=self.HEADERS, params=parameters)

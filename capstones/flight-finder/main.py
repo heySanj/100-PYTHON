@@ -23,16 +23,14 @@ HOME_AIRPORT = "BNE"
 
 # ---------------------------- MAIN PROGRAM ------------------------------- # 
 
-'''
-Use the Flight Search and Sheety API to populate your own copy of the Google Sheet
-with International Air Transport Association (IATA) codes for each city. Most of the
-cities in the sheet include multiple airports, you want the city code (not the airport code see here).
-'''
 sheet = DataManager() # Establish a connection to the Google sheets
 searcher = FlightSearch() # Establish a connection to the flight search engine
+message_service = NotificationManager()
 
 tomorrow = dt.today() + relativedelta(days=+1)
 six_months = tomorrow + relativedelta(months=+6)
+
+
 
 # Loop through the Google sheet data
 for location in sheet.data:
@@ -46,28 +44,19 @@ for location in sheet.data:
     flights = searcher.search(HOME_AIRPORT, location['iataCode'], tomorrow.strftime("%d/%m/%Y"), six_months.strftime("%d/%m/%Y"), location['lowestPrice'])['data']
     
     # If cheaper flights are found
-    if len(flights) > 0:
+    try:
         flight = FlightData(flights[0]) # get the first flight
-        print(flight.get_details())
-    
-    
-    
-    # flights_list = []
-
-    # for flight in flights:
-    #     new_flight = FlightData(flight)
-    #     flights_list.append(new_flight)
-    #     print(new_flight.get_details())
-    
-    
-    # If the price is lower than the one stored on the sheet -> send an alert!
+        message = flight.get_details()
+    except IndexError:
+        print(f"No flights found for {location['iataCode']}.")        
         
+    # If the price is lower than the one stored on the sheet -> update price and send an alert!
+    if flight.price < location['lowestPrice'] or location['lowestPrice'] == 0:
+        
+        # Update price
+        sheet.put_data(location['id'], "lowestPrice", flight.price)
+        
+        # Send a text message
+        message_service.send_sms(message=message)
+        # print(message)
 
-
-
-
-
-
-
-
-# print(json.dumps(flights, indent=4, sort_keys=True))

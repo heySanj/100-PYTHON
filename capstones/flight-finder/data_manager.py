@@ -28,5 +28,4 @@ class DataManager:
                     }
                 }
                 
-        response = requests.put(url=endpoint, json=data, headers=self.SHEETY_AUTH)      
-        print(response.text)
+        response = requests.put(url=endpoint, json=data, headers=self.SHEETY_AUTH)
