@@ -1,5 +1,7 @@
 from twilio.rest import Client
 import os
+from mail_message import Email
+
 # from twilio.http.http_client import TwilioHttpClient
 class NotificationManager:
     #This class is responsible for sending notifications with the deal flight details.
@@ -14,6 +16,11 @@ class NotificationManager:
         self.TO_NUMBER = os.environ.get("PH_NUM")
 
         self.client = Client(account_sid, auth_token)
+        
+        self.EMAIL_USER = os.environ.get("EMAIL_USER")
+        self.EMAIL_PASS = os.environ.get("EMAIL_PASS")
+        self.SENDER = ""
+        
 
     def send_sms(self, message):
 
@@ -28,3 +35,15 @@ class NotificationManager:
                             to= self.TO_NUMBER
                         )
         print(message.status)
+        
+    def send_email(self, recipient, subject, message):    
+        new_email = Email(
+            username=self.EMAIL_USER,
+            password=self.EMAIL_PASS,
+            sender=self.SENDER,
+            recipient=recipient,
+            subject=subject,
+            message=message
+        )    
+        # Send it
+        new_email.send()

@@ -10,22 +10,33 @@ class DataManager:
         self.SHEETY_AUTH = {
             "Authorization": f"Bearer {self.SHEETY_TOKEN}"
         }
-        self.data = self.get_data()
+        self.price_data = self.get_data("prices")
+        self.user_data = self.get_data("users")
         
     # Return data from the sheet
-    def get_data(self):
-        response = requests.get(url=self.SHEETY_ENDPOINT, headers=self.SHEETY_AUTH)
+    def get_data(self, sheet: str):
+        response = requests.get(url=f"{self.SHEETY_ENDPOINT}/{sheet}", headers=self.SHEETY_AUTH)
         # print(response.text)
-        return response.json()['prices']
+        return response.json()[sheet]
     
     # Update rows in the sheet
-    def put_data(self, row, column, data):
+    def put_data(self, sheet, row, column, data):
         
-        endpoint = f"{self.SHEETY_ENDPOINT}/{row}"
+        endpoint = f"{self.SHEETY_ENDPOINT}/{sheet}/{row}"
         
-        data = {"price": {
+        data = {sheet[:-1]: {
                     column: data,
                     }
                 }
-                
+                        
         response = requests.put(url=endpoint, json=data, headers=self.SHEETY_AUTH)
+        print(response)
+        
+    def post_data(self, sheet, data):
+        
+        endpoint = f"{self.SHEETY_ENDPOINT}/{sheet}"
+        
+        data = {sheet[:-1]: data}
+                
+        response = requests.post(url=endpoint, json=data, headers=self.SHEETY_AUTH)
+        print(response)
