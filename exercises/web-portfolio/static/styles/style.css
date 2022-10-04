@@ -1,0 +1,693 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Raleway:wght@400;500;700&display=swap");
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5vh;
+}
+
+header .pageTitle {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 10vh;
+  text-align: center;
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  color: #ff255b;
+  text-decoration: none;
+}
+
+header nav {
+  margin-top: 2vh;
+}
+
+header nav a {
+  padding: 4px;
+  margin: 0 4px 0 4px;
+  border-radius: 10px;
+  font-size: 5vw;
+  letter-spacing: 0em;
+  font-weight: 500;
+  color: #313131;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fceed4;
+  margin: 0;
+  height: 100vh;
+}
+
+#homeBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2vh 0 4vh 0;
+}
+
+.container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  overflow: hidden;
+  height: 30vh;
+  margin-bottom: 5vh;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #313131;
+  color: #fceed4;
+  outline: 3px solid #313131;
+  outline-offset: 5px;
+  text-decoration: none;
+}
+
+.container .card .slideText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-family: "Fraunces", serif;
+  font-size: 1em;
+  height: 25%;
+  background-color: #313131;
+  border-radius: 0 0 10px 10px;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.container .card .mediaBox {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .card .mediaBox .media {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: #313131;
+  color: #fceed4;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+footer .footerSocials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -12px;
+  margin-bottom: 10px;
+}
+
+footer .footerSocials a {
+  font-size: 1em;
+  margin: 0 6px 0 6px;
+  text-decoration: none;
+  color: #fceed4;
+}
+
+.post {
+  width: 75%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 6vh;
+  padding: 8px;
+  border-radius: 10px;
+  outline: 3px solid #313131;
+  outline-offset: 5px;
+}
+
+.post .postImage {
+  width: 100%;
+  overflow: hidden;
+}
+
+.post .postImage img,
+.post .postImage video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post .postText {
+  color: #313131;
+}
+
+.post .postText h1 {
+  margin: 5px 0 5px 0;
+  font-family: "Fraunces", serif;
+  font-size: 1.7em;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+}
+
+.post .postText h4 {
+  margin: 5px 0 5px 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.post .postText p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.aboutGrid {
+  height: 100%;
+  width: 77%;
+  margin-top: 5vh;
+}
+
+.aboutGrid h1,
+.aboutGrid h4 {
+  margin: 5px 0 5px 0;
+  font-family: "Fraunces", serif;
+  font-size: 1.7em;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+  color: #313131;
+}
+
+.aboutGrid p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
+  margin-top: 0;
+  text-align: justify;
+  color: #313131;
+}
+
+.aboutGrid .profilePic {
+  border-radius: 10px;
+  outline: 3px solid #313131;
+  outline-offset: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20%;
+  padding: 18px;
+}
+
+.aboutGrid .profilePic img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.aboutGrid .introText {
+  padding: 18px;
+  margin-top: 4vh;
+  border-radius: 10px;
+  outline: 3px solid #313131;
+  outline-offset: 5px;
+}
+
+.aboutGrid .skillsText {
+  padding: 18px;
+  margin-top: 4vh;
+  border-radius: 10px;
+  outline: 3px solid #313131;
+  outline-offset: 5px;
+}
+
+.aboutGrid .contact {
+  padding: 18px;
+  margin-top: 4vh;
+  border-radius: 10px;
+  outline: 3px solid #313131;
+  outline-offset: 5px;
+}
+
+.aboutGrid .flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 30px 0 30px 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+.aboutGrid .flexContainer .skills {
+  list-style-type: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-align: center;
+  padding: 15px 20px 15px 20px;
+  margin-bottom: 2%;
+  background-color: #313131;
+  color: #fceed4;
+  border-radius: 10px;
+}
+
+.aboutGrid .flexContainer .contactLink {
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 2.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  width: 25%;
+  padding: 15px 15px 0 15px;
+  margin-bottom: 3%;
+  background-color: #ff255b;
+  color: #fceed4;
+  border-radius: 10px;
+  line-height: 0.8em;
+}
+
+.aboutGrid .flexContainer .contactLink p {
+  font-size: 0.4em;
+  margin-bottom: 0;
+  color: #fceed4;
+}
+
+#collage img {
+  height: 30vh;
+  max-width: 95%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 10px;
+  border-radius: 10px;
+  outline: 3px solid #313131;
+}
+
+@media (min-width: 481px) {
+  header .pageTitle {
+    font-size: 13vw;
+  }
+  header nav a {
+    padding: 4px;
+    margin: 0 8px 0 8px;
+    font-size: 1.4em;
+  }
+  #homeBody .container {
+    margin-top: 2vh;
+  }
+  .container {
+    margin-top: -4vh;
+  }
+  .container .card {
+    height: 35vh;
+    width: 80%;
+    outline: 3px solid #313131;
+    outline-offset: 5px;
+  }
+  .container .card .slideText {
+    font-size: 1.1em;
+  }
+  .aboutGrid {
+    margin-top: 8vh;
+    height: 100%;
+  }
+  .aboutGrid .contact .flexContainer .contactLink {
+    font-size: 2.4em;
+    line-height: 1.2em;
+  }
+  .aboutGrid .contact .flexContainer .contactLink p {
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 1024px) {
+  * {
+    -webkit-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+  }
+  header .pageTitle {
+    font-size: 12vh;
+  }
+  header nav a {
+    padding: 7px;
+  }
+  .container .card {
+    margin: 1.7vw;
+    height: 55vh;
+    min-width: 15%;
+    width: 16%;
+    outline-offset: 12px;
+    outline-color: #313131;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .container .card .slideText {
+    height: 25%;
+    -webkit-animation-name: slideTextDown;
+            animation-name: slideTextDown;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    background-color: #ff255b;
+  }
+  .container .card .slideText h1 {
+    font-size: 1.4em;
+  }
+  #blogContainer {
+    margin: 1vh 0 4vh 0;
+  }
+  #blogContainer .post {
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+  }
+  #blogContainer .post .postImage {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding-right: 0.7em;
+    overflow: hidden;
+  }
+  #blogContainer .post .postImage img,
+  #blogContainer .post .postImage video {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  #blogContainer .post .postText {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    padding-left: 0.7em;
+    font-size: 1em;
+  }
+  #collage {
+    margin: 1vh 0 4vh 0;
+  }
+  #collage img {
+    max-width: 100%;
+  }
+  #aboutContainer {
+    margin: 1vh 0 4vh 0;
+  }
+  .aboutGrid {
+    margin-top: 5vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 4fr 6fr;
+        grid-template-columns: 4fr 6fr;
+    -ms-grid-rows: 0fr 1fr 0fr;
+        grid-template-rows: 0fr 1fr 0fr;
+    gap: 35px 35px;
+    grid-auto-flow: row;
+        grid-template-areas: "profilePic introText" "profilePic skillsText" "profilePic contact";
+  }
+  .aboutGrid h1,
+  .aboutGrid h4 {
+    font-size: 2em;
+  }
+  .aboutGrid p {
+    font-size: 1em;
+  }
+  .aboutGrid .profilePic {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    grid-area: profilePic;
+    height: auto;
+  }
+  .aboutGrid .introText {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: introText;
+    margin-top: 0;
+  }
+  .aboutGrid .skillsText {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: skillsText;
+    margin-top: 0;
+  }
+  .aboutGrid .contact {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: contact;
+    margin-top: 0;
+  }
+  .aboutGrid .flexContainer .skills {
+    font-size: 1.4em;
+    padding: 15px 24px 15px 24px;
+    margin-bottom: 2%;
+  }
+  .aboutGrid .flexContainer .contactLink {
+    font-size: 1.5em;
+    padding: 25px;
+    width: 14%;
+  }
+  .aboutGrid .flexContainer .contactLink p {
+    display: none;
+    line-height: 1.3em;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1440px) {
+  header nav a {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 1.6em;
+  }
+  .container .card {
+    margin: 1.5vw;
+    margin-top: 0;
+    height: 60vh;
+    min-width: 15%;
+    width: 18%;
+  }
+  .container .card .slideText h1 {
+    font-size: 2.9em;
+  }
+  #blogContainer .post {
+    padding: 25px;
+  }
+  #blogContainer .post .postImage {
+    width: 100%;
+  }
+  #blogContainer .post .postText {
+    font-size: 1.8em;
+  }
+  .aboutGrid h1,
+  .aboutGrid h4 {
+    font-size: 2.4em;
+  }
+  .aboutGrid p {
+    font-size: 1.5em;
+  }
+  .aboutGrid .flexContainer .skills {
+    font-size: 2.4em;
+    padding: 25px 40px 25px 40px;
+    margin-bottom: 2%;
+  }
+  .aboutGrid .flexContainer .contactLink {
+    width: 17%;
+    font-size: 2.4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .post:hover {
+    outline-color: #ff255b;
+  }
+  .post:hover .postText .postTitle {
+    color: #ff255b;
+  }
+  .card:hover {
+    outline-color: #ff255b;
+  }
+  .card:hover .slideText {
+    -webkit-animation-name: slideTextUp;
+            animation-name: slideTextUp;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    background-color: #ff255b;
+  }
+  .pageTitle:hover {
+    color: #462177;
+    -webkit-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+  }
+  nav a:hover {
+    color: #fceed4;
+    background-color: #462177;
+  }
+  #collage .post img:hover {
+    outline-color: #ff255b;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  .aboutGrid .profilePic:hover,
+  .aboutGrid .introText:hover,
+  .aboutGrid .skillsText:hover,
+  .aboutGrid .contact:hover {
+    outline-color: #ff255b;
+  }
+  .aboutGrid .profilePic:hover h1,
+  .aboutGrid .introText:hover h1,
+  .aboutGrid .skillsText:hover h1,
+  .aboutGrid .contact:hover h1 {
+    color: #ff255b;
+  }
+  .aboutGrid .contact .flexContainer .contactLink:hover {
+    background-color: #462177;
+  }
+  .aboutGrid .contact .flexContainer .contactLink:hover i {
+    display: none;
+  }
+  .aboutGrid .contact .flexContainer .contactLink:hover p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@-webkit-keyframes slideTextUp {
+  0% {
+    display: block;
+    opacity: 0;
+    height: 0%;
+    background-color: #313131;
+  }
+  100% {
+    opacity: 1;
+    height: 25%;
+    background-color: #ff255b;
+  }
+}
+
+@keyframes slideTextUp {
+  0% {
+    display: block;
+    opacity: 0;
+    height: 0%;
+    background-color: #313131;
+  }
+  100% {
+    opacity: 1;
+    height: 25%;
+    background-color: #ff255b;
+  }
+}
+
+@-webkit-keyframes slideTextDown {
+  0% {
+    opacity: 1;
+    height: 25%;
+    background-color: #ff255b;
+  }
+  100% {
+    opacity: 0;
+    height: 0%;
+    background-color: #313131;
+    display: none;
+  }
+}
+
+@keyframes slideTextDown {
+  0% {
+    opacity: 1;
+    height: 25%;
+    background-color: #ff255b;
+  }
+  100% {
+    opacity: 0;
+    height: 0%;
+    background-color: #313131;
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
