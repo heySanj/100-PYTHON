@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Blog Posts</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% for blog_post in posts %}
+            {% if blog_post['id'] == 2 %}
+                <h1>{{ blog_post['title'] }}</h1>
+                <h2>{{ blog_post['subtitle'] }}</h1>
+                <p>{{ blog_post['body'] }}</p>
+                <hr>
+                <br>
+                <br>
+                <br>
+            {% endif %}
+        {% endfor %}
+
+        
+
+    </body>
+    <footer>
+        <p>&copy; Sanjeev Prasad {{ year }} </p>
+    </footer>
+</html>
