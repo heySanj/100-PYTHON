@@ -34,7 +34,7 @@ def guess(name):
     return render_template('guess.html', name=name.title(), age=age, gender=gender)
 
 @app.route('/blog')
-def blog():
+def get_blog():
     blog_url = "https://api.npoint.io/c790b4d5cab58020d391"
     response = requests.get(blog_url)
     response.raise_for_status() # Raise an error if it occurs

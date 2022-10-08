@@ -10,7 +10,7 @@
     </head>
     <body>
         {% for blog_post in posts %}
-            {% if blog_post['id'] == 2 %}
+            <!-- {% if blog_post['id'] == num %} -->
                 <h1>{{ blog_post['title'] }}</h1>
                 <h2>{{ blog_post['subtitle'] }}</h1>
                 <p>{{ blog_post['body'] }}</p>
@@ -18,7 +18,7 @@
                 <br>
                 <br>
                 <br>
-            {% endif %}
+            <!-- {% endif %} -->
         {% endfor %}
 
         
