@@ -1,0 +1,9 @@
+.jumbotron{
+    background-color: rgb(37, 32, 102);
+    color: white;
+    border-radius: 0;
+}
+
+.jumbotron hr{
+    border-color: rgba(255, 255, 255, 0.247);
+}
