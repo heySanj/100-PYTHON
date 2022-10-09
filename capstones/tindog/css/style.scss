@@ -1,0 +1,16 @@
+// Import Variables, Fonts and Mixins
+@import "variables";
+// @import "mixins";
+
+h1{
+    font-family: $mainFont;
+    font-size: 3rem;  
+    line-height: 1.5;  
+    font-weight: 900;
+    padding: 2rem;
+}
+
+#title {
+    background-color: $mainColour;
+    color: white;
+}

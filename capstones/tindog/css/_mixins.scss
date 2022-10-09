@@ -1,0 +1,6 @@
+@mixin borderStyle{
+// border style
+border-radius: 10px;
+outline: 3px solid $borderColour;
+outline-offset: 5px;
+}
