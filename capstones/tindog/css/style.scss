@@ -2,15 +2,61 @@
 @import "variables";
 // @import "mixins";
 
-h1{
-    font-family: $mainFont;
-    font-size: 3rem;  
-    line-height: 1.5;  
-    font-weight: 900;
-    padding: 2rem;
+body{
+    font-family: $headerFont;
+}
+
+.navbar{   
+
+    padding: 1rem 0 4.5rem 0;
+
+    h2{
+        font-family: $textFont;
+        font-size: 3rem;
+        font-weight: 900;   
+    }
+
+    .nav-item{
+        padding: 0 15px;
+        font-size: 1.2rem;
+    }
+  
 }
 
 #title {
     background-color: $mainColour;
     color: white;
+    margin-bottom: -8rem;
+    z-index: -1;
+
+    h1{
+        font-family: $headerFont;
+        font-size: 4em;  
+        line-height: 1.5;  
+        font-weight: 900;
+    }
+
+    .container-fluid{
+        padding: 3% 15%;
+    }
+
+    img{
+        width: 50%;
+        transform: rotate(25deg);
+    }
+
+    .download-btn{
+        margin: 5% 3% 5% 0;
+    }
+}
+
+#features {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+
+    .container-fluid{
+        padding: 5% 15%;
+    }
+
 }
