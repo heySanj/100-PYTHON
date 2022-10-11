@@ -59,4 +59,75 @@ body{
         padding: 5% 15%;
     }
 
+    .feature-box{
+
+        text-align: center;
+    
+        h3{
+            font-family: $headerFont;
+            font-weight: 900;
+            font-size: 1.7rem;
+        }
+    
+        p{
+            font-family: $headerFont;
+            font-weight: 400;
+            font-size: 1rem;
+            color: $grey;
+        }
+    
+        i{
+            color: $iconColour;
+            font-size: 3rem;
+            margin: 0 0 1rem;
+    
+            // & symbol selects the parent element
+            &:hover{
+                color: $mainColour;
+            }
+    
+        }
+    }
+}
+
+#testimonials{
+
+    background-color: $iconColour;
+    color: white;
+
+    .container-fluid{
+
+        padding: 5% 15%;
+        text-align: center;
+
+        h2{
+            font-family: $headerFont;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        img{
+            border-radius: 100%;
+            width: 10%;
+            margin: 20px;
+        }
+
+        em{
+            font-size: 1.2rem;
+        }
+
+    }
+
+}
+
+#press {
+    background-color: $iconColour;
+    text-align: center;
+    padding-bottom: 3%;
+
+    img{
+        width: 12%;
+        padding: 0 2%;
+    }
+
 }
