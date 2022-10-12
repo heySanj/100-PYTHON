@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Ubuntu:wght@300;400;500;700&display=swap");
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -19,8 +19,6 @@ body {
 #title {
   background-color: #ff4c68;
   color: white;
-  margin-bottom: -8rem;
-  z-index: -1;
 }
 #title h1 {
   font-family: "Montserrat", sans-serif;
@@ -29,11 +27,13 @@ body {
   font-weight: 900;
 }
 #title .container-fluid {
-  padding: 3% 15%;
+  padding: 3% 15% 7%;
 }
 #title img {
-  width: 50%;
+  width: 60%;
   transform: rotate(25deg);
+  position: absolute;
+  right: 20%;
 }
 #title .download-btn {
   margin: 5% 3% 5% 0;
@@ -42,7 +42,6 @@ body {
 #features {
   background-color: white;
   position: relative;
-  z-index: 1;
 }
 #features .container-fluid {
   padding: 5% 15%;
@@ -75,7 +74,6 @@ body {
   color: white;
 }
 #testimonials .container-fluid {
-  padding: 5% 15%;
   text-align: center;
 }
 #testimonials .container-fluid h2 {
@@ -91,6 +89,9 @@ body {
 #testimonials .container-fluid em {
   font-size: 1.2rem;
 }
+#testimonials .container-fluid .carousel-item {
+  padding: 5% 15%;
+}
 
 #press {
   background-color: #ef8172;
@@ -100,4 +101,24 @@ body {
 #press img {
   width: 12%;
   padding: 0 2%;
+}
+
+#pricing .container-fluid {
+  padding: 3% 15%;
+  text-align: center;
+}
+#pricing .container-fluid .pricing-column {
+  padding: 3% 2%;
+}
+#pricing .container-fluid .pricing-header h2 {
+  font-weight: 900;
+  font-size: 3rem;
+}
+#pricing .container-fluid .pricing-header p {
+  font-size: 2rem;
+  color: #8f8f8f;
+  padding-bottom: 2rem;
+}
+#pricing .container-fluid .card-body > h1 {
+  font-weight: 900;
 }/*# sourceMappingURL=style.css.map */

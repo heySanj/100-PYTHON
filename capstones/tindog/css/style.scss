@@ -26,8 +26,6 @@ body{
 #title {
     background-color: $mainColour;
     color: white;
-    margin-bottom: -8rem;
-    z-index: -1;
 
     h1{
         font-family: $headerFont;
@@ -37,12 +35,14 @@ body{
     }
 
     .container-fluid{
-        padding: 3% 15%;
+        padding: 3% 15% 7%;
     }
 
     img{
-        width: 50%;
+        width: 60%;
         transform: rotate(25deg);
+        position: absolute;
+        right: 20%;
     }
 
     .download-btn{
@@ -53,7 +53,6 @@ body{
 #features {
     background-color: white;
     position: relative;
-    z-index: 1;
 
     .container-fluid{
         padding: 5% 15%;
@@ -97,7 +96,7 @@ body{
 
     .container-fluid{
 
-        padding: 5% 15%;
+        
         text-align: center;
 
         h2{
@@ -116,6 +115,10 @@ body{
             font-size: 1.2rem;
         }
 
+        .carousel-item{
+            padding: 5% 15%;
+        }
+
     }
 
 }
@@ -130,4 +133,35 @@ body{
         padding: 0 2%;
     }
 
+}
+
+
+#pricing{
+
+    .container-fluid{
+
+        padding: 3% 15%;
+        text-align: center;
+
+        .pricing-column{
+            padding: 3% 2%;
+        }
+
+        .pricing-header{
+            h2{
+                font-weight: 900;
+                font-size: 3rem;
+            }
+            p{
+                font-size: 2rem;
+                color: $grey;
+                padding-bottom: 2rem;
+            }
+        }
+
+        .card-body>h1{
+            font-weight: 900;
+        }
+
+    }
 }
