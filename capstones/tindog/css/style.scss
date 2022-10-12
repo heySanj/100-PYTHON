@@ -2,166 +2,199 @@
 @import "variables";
 // @import "mixins";
 
-body{
-    font-family: $headerFont;
+body {
+  font-family: $headerFont;
+  text-align: center;
 }
 
-.navbar{   
+.navbar {
+  padding: 1rem 0 4.5rem 0;
 
-    padding: 1rem 0 4.5rem 0;
+  h2 {
+    font-family: $textFont;
+    font-size: 3rem;
+    font-weight: 900;
+  }
 
-    h2{
-        font-family: $textFont;
-        font-size: 3rem;
-        font-weight: 900;   
-    }
+  .nav-item {
+    padding: 0 15px;
+    font-size: 1.2rem;
+  }
+}
 
-    .nav-item{
-        padding: 0 15px;
-        font-size: 1.2rem;
-    }
-  
+.coloured-section {
+    background-color: $mainColour;
+    color: white;
+}
+
+.white-section {
+    background-color: white;
+    color: black;
+}
+
+.container-fluid{
+    padding: 3% 15%;
 }
 
 #title {
-    background-color: $mainColour;
-    color: white;
 
-    h1{
-        font-family: $headerFont;
-        font-size: 4em;  
-        line-height: 1.5;  
-        font-weight: 900;
-    }
+  text-align: center;
 
-    .container-fluid{
-        padding: 3% 15% 7%;
-    }
+  h1 {
+    font-size: 3em;
+    line-height: 1.5;
+    font-weight: 900;
+  }
 
-    img{
-        width: 60%;
-        transform: rotate(25deg);
-        position: absolute;
-        right: 20%;
-    }
+  .container-fluid {
+    padding-bottom: 7%;
+  }
 
-    .download-btn{
-        margin: 5% 3% 5% 0;
-    }
+  img {
+    width: 90%;
+    position: static;
+  }
+
+  .download-btn {
+    margin: 5% 3% 5% 0;
+  }
 }
 
 #features {
-    background-color: white;
-    position: relative;
+  position: relative;
 
-    .container-fluid{
-        padding: 5% 15%;
+  .feature-box {
+
+    h3 {
+      font-weight: 900;
+      font-size: 1.7rem;
     }
 
-    .feature-box{
-
-        text-align: center;
-    
-        h3{
-            font-family: $headerFont;
-            font-weight: 900;
-            font-size: 1.7rem;
-        }
-    
-        p{
-            font-family: $headerFont;
-            font-weight: 400;
-            font-size: 1rem;
-            color: $grey;
-        }
-    
-        i{
-            color: $iconColour;
-            font-size: 3rem;
-            margin: 0 0 1rem;
-    
-            // & symbol selects the parent element
-            &:hover{
-                color: $mainColour;
-            }
-    
-        }
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      color: $grey;
     }
+
+    i {
+      color: $iconColour;
+      font-size: 3rem;
+      margin: 0 0 1rem;
+
+      // & symbol selects the parent element
+      &:hover {
+        color: $mainColour;
+      }
+    }
+  }
 }
 
-#testimonials{
+#testimonials {
+  background-color: $iconColour;
 
-    background-color: $iconColour;
-    color: white;
-
-    .container-fluid{
-
-        
-        text-align: center;
-
-        h2{
-            font-family: $headerFont;
-            font-weight: 700;
-            font-size: 2.5rem;
-        }
-
-        img{
-            border-radius: 100%;
-            width: 10%;
-            margin: 20px;
-        }
-
-        em{
-            font-size: 1.2rem;
-        }
-
-        .carousel-item{
-            padding: 5% 15%;
-        }
-
+  .container-fluid {
+    h2 {
+      font-family: $headerFont;
+      font-weight: 700;
+      font-size: 2.5rem;
     }
 
+    img {
+      border-radius: 100%;
+      width: 10%;
+      margin: 20px;
+    }
+
+    em {
+      font-size: 1.2rem;
+    }
+
+    .carousel-item {
+      padding: 5% 15%;
+    }
+  }
 }
 
 #press {
-    background-color: $iconColour;
-    text-align: center;
-    padding-bottom: 3%;
+  background-color: $iconColour;
+  padding-bottom: 3%;
 
-    img{
-        width: 12%;
-        padding: 0 2%;
-    }
-
+  img {
+    width: 12%;
+    padding: 0 2%;
+  }
 }
 
+#pricing {
+  .container-fluid {
 
-#pricing{
-
-    .container-fluid{
-
-        padding: 3% 15%;
-        text-align: center;
-
-        .pricing-column{
-            padding: 3% 2%;
-        }
-
-        .pricing-header{
-            h2{
-                font-weight: 900;
-                font-size: 3rem;
-            }
-            p{
-                font-size: 2rem;
-                color: $grey;
-                padding-bottom: 2rem;
-            }
-        }
-
-        .card-body>h1{
-            font-weight: 900;
-        }
-
+    .pricing-column {
+      padding: 3% 2%;
     }
+
+    .pricing-header {
+      h2 {
+        font-weight: 900;
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+        color: $grey;
+        padding-bottom: 2rem;
+      }
+    }
+
+    .card-body > h1 {
+      font-weight: 900;
+    }
+  }
+}
+
+#cta {
+  .container-fluid {
+    h3 {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+    .download-btn {
+      margin: 2% 2% 2% 0;
+    }
+  }
+}
+
+#footer {
+  .container-fluid {
+
+    a {
+      font-size: 1.5rem;
+      color: black;
+      text-decoration: none;
+      i {
+        margin: 2rem 1.3rem;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $grey;
+    }
+  }
+}
+
+// Large screens and above
+@media (min-width: 1028px) {
+  #title {
+    text-align: left;
+
+    h1 {
+      font-size: 4em;
+    }
+
+    img {
+      width: 60%;
+      transform: rotate(25deg);
+      position: absolute;
+      right: 20%;
+    }
+  }
 }

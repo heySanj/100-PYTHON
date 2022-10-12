@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Ubuntu:wght@300;400;500;700&display=swap");
 body {
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 .navbar {
@@ -16,46 +17,47 @@ body {
   font-size: 1.2rem;
 }
 
-#title {
+.coloured-section {
   background-color: #ff4c68;
   color: white;
 }
+
+.white-section {
+  background-color: white;
+  color: black;
+}
+
+.container-fluid {
+  padding: 3% 15%;
+}
+
+#title {
+  text-align: center;
+}
 #title h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   line-height: 1.5;
   font-weight: 900;
 }
 #title .container-fluid {
-  padding: 3% 15% 7%;
+  padding-bottom: 7%;
 }
 #title img {
-  width: 60%;
-  transform: rotate(25deg);
-  position: absolute;
-  right: 20%;
+  width: 90%;
+  position: static;
 }
 #title .download-btn {
   margin: 5% 3% 5% 0;
 }
 
 #features {
-  background-color: white;
   position: relative;
 }
-#features .container-fluid {
-  padding: 5% 15%;
-}
-#features .feature-box {
-  text-align: center;
-}
 #features .feature-box h3 {
-  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1.7rem;
 }
 #features .feature-box p {
-  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color: #8f8f8f;
@@ -71,10 +73,6 @@ body {
 
 #testimonials {
   background-color: #ef8172;
-  color: white;
-}
-#testimonials .container-fluid {
-  text-align: center;
 }
 #testimonials .container-fluid h2 {
   font-family: "Montserrat", sans-serif;
@@ -95,7 +93,6 @@ body {
 
 #press {
   background-color: #ef8172;
-  text-align: center;
   padding-bottom: 3%;
 }
 #press img {
@@ -103,10 +100,6 @@ body {
   padding: 0 2%;
 }
 
-#pricing .container-fluid {
-  padding: 3% 15%;
-  text-align: center;
-}
 #pricing .container-fluid .pricing-column {
   padding: 3% 2%;
 }
@@ -121,4 +114,41 @@ body {
 }
 #pricing .container-fluid .card-body > h1 {
   font-weight: 900;
+}
+
+#cta .container-fluid h3 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+#cta .container-fluid .download-btn {
+  margin: 2% 2% 2% 0;
+}
+
+#footer .container-fluid a {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+}
+#footer .container-fluid a i {
+  margin: 2rem 1.3rem;
+}
+#footer .container-fluid p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #8f8f8f;
+}
+
+@media (min-width: 1028px) {
+  #title {
+    text-align: left;
+  }
+  #title h1 {
+    font-size: 4em;
+  }
+  #title img {
+    width: 60%;
+    transform: rotate(25deg);
+    position: absolute;
+    right: 20%;
+  }
 }/*# sourceMappingURL=style.css.map */

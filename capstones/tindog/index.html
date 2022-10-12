@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>TinDog</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico"/>
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -39,7 +40,7 @@
   </head>
 
   <body>
-    <section id="title" class="overflow-hidden">
+    <section id="title" class="overflow-hidden coloured-section">
       <div class="container-fluid">
         <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -58,15 +59,15 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a class="nav-link active" aria-current="page" href="#footer"
                   >Contact</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#pricing">Pricing</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Download</a>
+                <a class="nav-link" href="#cta">Download</a>
               </li>
             </ul>
           </div>
@@ -96,7 +97,7 @@
     </section>
 
     <!-- Features -->
-    <section id="features">
+    <section class="white-section" id="features">
       <div class="container-fluid">
         <div class="row">
           <div class="feature-box col-md-4">
@@ -120,7 +121,7 @@
 
     <!-- Testimonials -->
 
-    <section id="testimonials">
+    <section class="coloured-section" id="testimonials">
       <div class="container-fluid">
 
         <!-- Carousel -->
@@ -175,7 +176,7 @@
 
     <!-- Press -->
 
-    <section id="press">
+    <section class="coloured-section" id="press">
       <img src="images/techcrunch.png" alt="tc-logo" />
       <img src="images/tnw.png" alt="tnw-logo" />
       <img src="images/bizinsider.png" alt="biz-insider-logo" />
@@ -184,7 +185,7 @@
 
     <!-- Pricing -->
 
-    <section id="pricing">
+    <section class="white-section" id="pricing">
 
       <div class="container-fluid">
         <div class="pricing-header">
@@ -251,16 +252,33 @@
 
     <!-- Call to Action -->
 
-    <section id="cta">
-      <h3>Find the True Love of Your Dog's Life Today.</h3>
-      <button type="button">Download</button>
-      <button type="button">Download</button>
+    <section class="coloured-section" id="cta">
+      <div class="container-fluid">
+        <h3>Find the True Love of Your Dog's Life Today.</h3>
+        <button type="button" class="download-btn btn btn-dark btn-lg">
+          <i class="fa-brands fa-apple"></i> Download
+        </button>
+        <button
+          type="button"
+          class="download-btn btn btn-light btn-lg"
+        >
+          <i class="fa-brands fa-google-play"></i> Download
+        </button>
+      </div>
     </section>
 
     <!-- Footer -->
 
     <footer id="footer">
-      <p>© Copyright 2018 TinDog</p>
+      <div class="container-fluid">
+        <div class="socials">
+          <a href="#" class="link-dark"><i class="fa-brands fa-twitter"></i></a>          
+          <a href="#" class="link-dark"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="link-dark"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="link-dark"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>© Copyright 2018 TinDog</p>
+      </div>      
     </footer>
   </body>
 </html>
