@@ -1,8 +1,35 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from markupsafe import escape # Escape input strings to prevent injection attacks
 import random
 import datetime
 import requests
+import os
+
+# -----------------------------------------------------------------------------
+
+from smtp.mail_message import Email
+
+def send_email(name, email, phone, message):
+    
+    new_message = f'''
+        Name: {name}
+        Email: {email}
+        Phone: {phone}
+        _____________________________________________
+            
+        {message}'''
+        
+    new_email = Email(
+        username=os.environ.get("EMAIL_USER"),
+        password=os.environ.get("EMAIL_PASS"),
+        sender="Blog Contact Form",
+        recipient=os.environ.get("RECIPIENT"),
+        subject=f"{name} wants to get in touch!",
+        message=new_message
+    )
+   
+    # Send it
+    new_email.send()
 
 # -----------------------------------------------------------------------------
 
@@ -24,9 +51,20 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/contact')
+# @app.route('/contact')
+# def contact():
+#     return render_template('contact.html')
+
+@app.route('/contact', methods=['POST', 'GET'])
 def contact():
-    return render_template('contact.html')
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        message = request.form['message']    
+        send_email(name,email,phone,message)
+        return render_template('contact.html', sent=True)
+    return render_template('contact.html', sent=False)
 
 @app.route('/post/<num>')
 def post(num):
