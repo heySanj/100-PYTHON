@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Login{% endblock %}
+{% block content %}
+	<div class="container">
+		<h1>Login</h1>
+		<!-- This is where our form will go. -->
+		<!-- Use 'novalidate' to turn off browser validation and ensure that our custom validation is working on all browsers -->
+		<form method="POST" action="{{ url_for('login') }}" novalidate> 
+			{{ form.csrf_token }}
+			<p>
+				{{ form.email.label }} <br> {{ form.email(size=30) }}
+				<!-- If there are any errors with validation, display the errors: https://wtforms.readthedocs.io/en/2.3.x/crash_course/#displaying-errors -->
+				{% for err in form.email.errors %}
+					<span style="color:red;">{{ err }}</span>
+				{% endfor %}
+			</p>
+			<p>
+				{{ form.password.label }} <br> {{ form.password(size=30) }}
+				{% for err in form.password.errors %}
+					<span style="color:red;">{{ err }}</span>
+				{% endfor %}
+			</p>
+			{{ form.submit }}
+		</form>
+	</div>
+{% endblock %}
