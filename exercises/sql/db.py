@@ -1,5 +1,3 @@
-from msilib.schema import CreateFolder
-from shutil import ReadError
 import sqlite3
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
