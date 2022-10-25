@@ -6,4 +6,4 @@ class MyForm(FlaskForm):
     # Have a look at the basic fields of WTForms: https://wtforms.readthedocs.io/en/2.3.x/fields/#basic-fields
     email = StringField(label='Email', validators=[DataRequired(), Email()])
     password = PasswordField(label='Password', validators=[DataRequired(), Length(min=8)]) # When validation is not met, a list of errors can be generated and passed into HTML
-    submit = SubmitField(label='Log In')
+    submit = SubmitField(label='Sign me up!')
